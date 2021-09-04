@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">TIX ID Github User</string>
+    <string name="tvUserId">User ID</string>
+    <string name="tvUserUrl">User URL</string>
+    <string name="tvNoResult">Tidak ada hasil</string>
+    <string name="tvResultNotLoaded">Hasil tidak dapat ditampilkan</string>
+
+    <string name="btnRetry">Coba Lagi</string>
 </resources>
