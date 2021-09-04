@@ -15,7 +15,7 @@ class TixIdPagingSource(
         val position = params.key ?: UrlEndPoint.STARTING_PAGE_INDEX
 
         return try {
-            val response = api.getAllUsers(position)
+            val response = api.getAllUsers(params.loadSize)
 
             LoadResult.Page(
                 data = response,

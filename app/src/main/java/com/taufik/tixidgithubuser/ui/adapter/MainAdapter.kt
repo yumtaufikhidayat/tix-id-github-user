@@ -48,12 +48,14 @@ class MainAdapter : PagingDataAdapter<UserResponseItem, MainAdapter.MainViewHold
             override fun areItemsTheSame(
                 oldItem: UserResponseItem,
                 newItem: UserResponseItem
-            ) = oldItem.id == newItem.id
+            )
+            = oldItem.id == newItem.id
 
             override fun areContentsTheSame(
                 oldItem: UserResponseItem,
                 newItem: UserResponseItem
-            ) = oldItem == newItem
+            )
+            = oldItem == newItem
         }
     }
 }
