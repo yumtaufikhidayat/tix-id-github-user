@@ -4,7 +4,7 @@ object UrlEndPoint {
 
     const val BASE_URL = "https://api.github.com/"
     const val USERS_PARAM = "users"
-    const val API_KEY = "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"
+    const val API_KEY = ""
     const val STARTING_PAGE_INDEX = 1
     const val PER_PAGE = 10
 }
