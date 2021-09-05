@@ -33,11 +33,15 @@ class MainAdapter : PagingDataAdapter<UserResponseItem, MainAdapter.MainViewHold
                     .into(imgUserProfile)
 
                 tvUsernameProfile.text = items.login
-                tvIdProfile.text = items.id.toString()
-                tvUrlProfile.text = items.url
+                tvIdProfile.text = String.format("ID: %s", items.id.toString())
+                tvUrlProfile.text = String.format("Url: %s", items.url)
 
                 itemView.setOnClickListener {
-                    Toast.makeText(itemView.context, "${items.id}", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(itemView.context,
+                        String.format("Username: %s", items.login) +
+                                String.format("\nID: %s", items.id.toString()) +
+                                String.format("\nUrl: %s", items.url),
+                        Toast.LENGTH_SHORT).show()
                 }
             }
         }
@@ -48,14 +52,12 @@ class MainAdapter : PagingDataAdapter<UserResponseItem, MainAdapter.MainViewHold
             override fun areItemsTheSame(
                 oldItem: UserResponseItem,
                 newItem: UserResponseItem
-            )
-            = oldItem.id == newItem.id
+            ) = oldItem.id == newItem.id
 
             override fun areContentsTheSame(
                 oldItem: UserResponseItem,
                 newItem: UserResponseItem
-            )
-            = oldItem == newItem
+            ) = oldItem == newItem
         }
     }
 }
