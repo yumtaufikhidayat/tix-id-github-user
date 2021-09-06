@@ -41,7 +41,15 @@ class MainFragment: Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        swipeRefreshLayoutOnRefreshListener()
+
         setData()
+    }
+
+    private fun swipeRefreshLayoutOnRefreshListener(){
+        binding.apply {
+            swipeRefreshMain.setOnRefreshListener { setData() }
+        }
     }
 
     private fun setData() {
@@ -71,6 +79,7 @@ class MainFragment: Fragment() {
 
         adapter.addLoadStateListener { loadState ->
             binding.apply {
+                swipeRefreshMain.isRefreshing = loadState.source.refresh is LoadState.Loading
                 progressBarMain.isVisible = loadState.source.refresh is LoadState.Loading
                 rvAllUsers.isVisible = loadState.source.refresh is LoadState.NotLoading
                 btnRetry.isVisible = loadState.source.refresh is LoadState.Error
