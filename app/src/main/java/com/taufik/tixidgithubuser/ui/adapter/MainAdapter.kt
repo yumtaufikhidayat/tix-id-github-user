@@ -7,7 +7,6 @@ import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.taufik.tixidgithubuser.R
 import com.taufik.tixidgithubuser.data.model.UserResponseItem
 import com.taufik.tixidgithubuser.databinding.ItemUsersBinding
