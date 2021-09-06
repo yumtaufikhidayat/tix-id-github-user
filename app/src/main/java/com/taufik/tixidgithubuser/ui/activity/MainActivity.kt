@@ -27,9 +27,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initActionBar() {
-        binding.apply {
-            supportActionBar?.elevation = 0F
-        }
+        supportActionBar?.elevation = 0F
     }
 
     private fun setNavHostFragment() {
