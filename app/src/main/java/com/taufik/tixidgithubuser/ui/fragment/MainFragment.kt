@@ -59,7 +59,6 @@ class MainFragment: Fragment() {
         binding.apply {
             rvAllUsers.layoutManager = LinearLayoutManager(requireActivity())
             rvAllUsers.setHasFixedSize(true)
-            rvAllUsers.itemAnimator = null
             rvAllUsers.adapter = adapter.withLoadStateHeaderAndFooter(
                 header = MainLoadStateAdapter { adapter.retry() },
                 footer = MainLoadStateAdapter { adapter.retry() }
