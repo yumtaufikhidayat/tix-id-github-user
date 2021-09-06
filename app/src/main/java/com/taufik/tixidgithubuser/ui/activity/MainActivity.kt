@@ -21,9 +21,15 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        setNavHostFragment()
-
         initActionBar()
+
+        setNavHostFragment()
+    }
+
+    private fun initActionBar() {
+        binding.apply {
+            supportActionBar?.elevation = 0F
+        }
     }
 
     private fun setNavHostFragment() {
@@ -32,12 +38,6 @@ class MainActivity : AppCompatActivity() {
             navController = navHostFragment.findNavController()
             setSupportActionBar(toolbarMain)
             setupActionBarWithNavController(navController)
-        }
-    }
-
-    private fun initActionBar() {
-        binding.apply {
-            supportActionBar?.elevation = 0F
         }
     }
 }
