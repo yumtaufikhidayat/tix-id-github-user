@@ -12,12 +12,13 @@ class TixIdPagingSource(
 ) : PagingSource<Int, UserResponseItem>() {
 
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, UserResponseItem> {
+
         val position = params.key ?: UrlEndPoint.STARTING_PAGE_INDEX
 
         return try {
 
             val response = api.getAllUsers(UrlEndPoint.PER_PAGE)
-//            val response = api.getAllUsers(params.loadSize)
+//            val response = api.getAllUsers(position - 1, params.loadSize)
 
             LoadResult.Page(
                 data = response,
