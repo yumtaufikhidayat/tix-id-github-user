@@ -15,7 +15,6 @@
         android:theme="@style/Theme.TIXIDGithubUser">
         <activity
             android:name=".ui.activity.MainActivity"
-            android:screenOrientation="portrait"
             android:exported="true" />
         <activity
             android:name=".ui.activity.SplashscreenActivity"
