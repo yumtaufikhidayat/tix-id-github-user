@@ -63,7 +63,7 @@ class MainFragment: Fragment() {
 
         viewModel.data.observe(viewLifecycleOwner) {
             if (it != null) {
-                adapter.submitData(this.lifecycle, it)
+                adapter.submitData(viewLifecycleOwner.lifecycle, it)
             } else {
                 Log.d(TAG, "setData: $it")
             }
