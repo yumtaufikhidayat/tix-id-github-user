@@ -10,7 +10,7 @@ import com.bumptech.glide.Glide
 import com.taufik.tixidgithubuser.data.model.UserResponseItem
 import com.taufik.tixidgithubuser.databinding.ItemUsersBinding
 
-class MainAdapter : PagingDataAdapter<UserResponseItem, MainAdapter.MainViewHolder>(WATCHLIST_COMPARATOR) {
+class MainAdapter : PagingDataAdapter<UserResponseItem, MainAdapter.MainViewHolder>(PROFILE_COMPARATOR) {
 
     override fun onBindViewHolder(holder: MainViewHolder, position: Int) {
         val currentItem = getItem(position)
@@ -24,8 +24,8 @@ class MainAdapter : PagingDataAdapter<UserResponseItem, MainAdapter.MainViewHold
         return MainViewHolder(binding)
     }
 
-    class MainViewHolder(private val binding: ItemUsersBinding) :
-        RecyclerView.ViewHolder(binding.root) {
+    class MainViewHolder(private val binding: ItemUsersBinding) : RecyclerView.ViewHolder(binding.root) {
+
         fun bind(items: UserResponseItem) {
             binding.apply {
                 Glide.with(itemView.context)
@@ -48,7 +48,7 @@ class MainAdapter : PagingDataAdapter<UserResponseItem, MainAdapter.MainViewHold
     }
 
     companion object {
-        private val WATCHLIST_COMPARATOR = object : DiffUtil.ItemCallback<UserResponseItem>(){
+        private val PROFILE_COMPARATOR = object : DiffUtil.ItemCallback<UserResponseItem>(){
             override fun areItemsTheSame(
                 oldItem: UserResponseItem,
                 newItem: UserResponseItem

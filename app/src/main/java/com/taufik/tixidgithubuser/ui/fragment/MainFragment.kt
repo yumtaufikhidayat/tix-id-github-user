@@ -45,6 +45,7 @@ class MainFragment: Fragment() {
     }
 
     private fun setData() {
+
         adapter = MainAdapter()
 
         binding.apply {
